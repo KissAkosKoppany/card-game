@@ -24,7 +24,7 @@ const BossCards = () => {
         attack: 400,
         hp: 9000,
         theme: 'brown',
-        skill: 'Has 20% chance to crit. After every crit heals xxx.',
+        skill: 'Has 20% chance to crit. After every crit heals himself by 100 hp.',
         image: 'cardImg/beastTitan.jpg'
       },
       {
