@@ -1,0 +1,69 @@
+.boss-cards-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.boss-card-scale {
+    scale: 1.4;
+    margin-bottom: 0;
+}
+
+.boss-button {
+    position: absolute;
+    margin: var(--spacer-200);
+    padding: 0 var(--spacer-400);
+    border-radius: var(--br-radius);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-700);
+    background-color: var(--clr-blue-light);
+}
+
+.boss-button:hover {
+    box-shadow: var(--box-shadow) var(--clr-red);
+    color: var(--clr-red);
+}
+
+.boss-button:active {
+    box-shadow: none;
+}
+
+.boss-button-left {
+    left: 0;
+}
+
+.boss-button-right {
+    right: 0;
+}
+
+.show {
+    display: flex;
+}
+
+.boss-skill {
+    width: 60%;
+    text-shadow: var(--text-shadow);
+}
+
+.boss-skill h1 {
+    font-size: var(--font-size-500);
+    
+}
+
+.boss-skill-description {
+    text-indent: var(--spacer-500);
+    font-size: var(--font-size-400);
+    text-align: left;
+}
+
+@media screen and (max-height: 900px) {
+    .boss-card-scale {
+        position: relative;
+        scale: 1.9;
+    }
+}

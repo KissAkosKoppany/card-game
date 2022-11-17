@@ -1,0 +1,254 @@
+.fight-container {
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.fight-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--clr-blue-dark);
+    box-shadow: 0 0 15px 2px var(--clr-black);
+    z-index: 9999;
+    /* position: sticky;
+    top: 0; */
+}
+
+.boss-fight-container {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.boss-container {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.round-indicator-container {
+    scale: 1;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    text-align: center;
+    box-shadow: var(--box-shadow) var(--clr-white);
+    border-radius: var(--br-radius);
+    padding: var(--spacer-200);
+    background-image: linear-gradient(to top, var(--clr-blue-dark), var(--clr-blue-dark-hover));
+}
+
+.round-indicator {
+    font-size: var(--font-size-600);
+    margin: var(--spacer-100);
+}
+
+.card-select-container {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--font-size-500);
+}
+
+.select-button {
+    font-size: var(--font-size-700);
+    cursor: pointer;
+}
+
+.select-button:hover {
+    color: var(--clr-red);
+}
+
+.select-button:active {
+    color: var(--clr-red-dark);
+}
+
+.card-list-container {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    background-image: linear-gradient(to bottom, var(--clr-black), var(--clr-black-light));
+    /* position: relative; */
+    grid-auto-columns: 18%;
+    gap: var(--spacer-300);
+}
+
+.card-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slide-button {
+    position: absolute;
+    place-self: center;
+    padding: 0;
+    z-index: 99;
+    font-size: var(--font-size-600);
+    border: none;
+    color: var(--clr-red);
+    opacity: .8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+
+.slide-button-left {
+    left: 0;
+    background-image: linear-gradient(to right, var(--clr-black), var(--clr-blue-dark));
+    border-bottom-right-radius: var(--br-radius);
+    border-top-right-radius: var(--br-radius);
+}
+
+.slide-button-right {
+    right: 0;
+    background-image: linear-gradient(to left, var(--clr-black), var(--clr-blue-dark));
+    border-bottom-left-radius: var(--br-radius);
+    border-top-left-radius: var(--br-radius);
+}
+
+.slide-button:hover {
+    opacity: 1;
+}
+
+.slide-button:active {
+    opacity: 0.8;
+}
+
+.snap-inline {
+	/* scroll-snap-type: inline mandatory; */
+	margin-bottom: 0;
+	scroll-padding-inline: 1rem;
+}
+
+.snap-inline > * {
+	scroll-snap-align: start;
+}
+
+.selected-cards-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-around;
+    /* background: red; */
+}
+
+@keyframes battleEnd {
+    from {
+        background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0));
+        opacity: 0;   
+    }
+    to {
+        background-image: linear-gradient(to top, rgba(0,0,0, .9), rgba(0,0,0, .7));
+        opacity: 1;    
+    }
+}
+
+.battle-end-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: battleEnd;
+    animation-duration: 3s;
+    opacity: 1;
+    /* background: rgba(0, 0, 0, .75); */
+    background-image: linear-gradient(to top, rgba(0,0,0, .99), rgba(0,0,0, .7));
+}
+
+.battle-end-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.battle-end-title {
+    font-size: var(--font-size-900);
+    color: var(--clr-red);
+    letter-spacing: 10px;
+}
+
+@keyframes endButton {
+    from {
+        opacity: 0;
+        transform: translateY(var(--spacer-900));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.battle-end-button {
+    outline: none;
+    font-size: var(--font-size-400);
+    border: 3px solid var(--clr-red);
+    padding: var(--spacer-200) var(--spacer-500);
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--clr-red);
+    font-weight: 700;
+    border-radius: var(--br-radius);
+    opacity: 1;
+    animation-name: endButton;
+    animation-duration: 3s;
+}
+
+.battle-end-button:hover {
+    background-color: rgba(0, 0, 0, .9);
+    box-shadow: var(--box-shadow) var(--clr-red);
+}
+
+.battle-end-button:active {
+    background-color: black;
+    box-shadow: none;
+}
+
+@media screen and (min-height: 1000px) {
+    .boss-fight-container {
+        height: 100%;
+    }
+
+    .card-select-container {
+        height: 45%;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .boss-fight-container {
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .card-list-container {
+        gap: var(--spacer-1000);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .round-indicator-container {
+       scale: .7;
+       right: 5%; 
+    }
+}

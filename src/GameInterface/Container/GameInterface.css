@@ -1,0 +1,33 @@
+.game-interface {
+    width: 97%;
+    border-radius: var(--br-radius);
+    background-image: linear-gradient( to top, var(--clr-blue-light), var(--clr-blue-dark));
+    overflow-y: scroll;
+    /* height: 100%; */
+    height: 89%;
+    position: absolute;
+    bottom: var(--spacer-300);;
+}
+
+.game-interface::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (min-width: 1700px) {
+    .game-interface {
+        width: var(--width-large);
+    }
+}
+
+@media screen and (max-height: 1000px) {
+    .game-interface {
+        height: 88%;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .game-interface {
+        height: 85%;
+        max-width: 1000px;
+    }
+}

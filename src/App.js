@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import NavBar from "./Navigation/Container/NavBar";
+import GameInterface from "./GameInterface/Container/GameInterface";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+  const [route, setRoute] = useState('home');
+
+  return(
+    <>
+        <div className="app">
+          <NavBar changeRoute={setRoute} route={route} />
+          <div className="game-body">
+            <GameInterface route={route} />
+          </div>
+        </div>
+    </>
+  )
 }
 
 export default App;
